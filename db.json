@@ -1,0 +1,41 @@
+{
+  "productList": [
+    {
+      "productName": "Mango",
+      "category": "Fruits",
+      "freshness": "Secondhand",
+      "price": 500,
+      "comment": "this not fresh",
+      "date": "2022-02-03T18:30:00.000Z",
+      "id": 2
+    },
+    {
+      "productName": "Redmi NOte 10",
+      "category": "Fruits",
+      "freshness": "Brandnew",
+      "price": 200000,
+      "comment": "New",
+      "date": "2022-02-03T18:30:00.000Z",
+      "id": 3
+    },
+    {
+      "productName": "Nokia",
+      "category": "Electronics",
+      "freshness": "Brandnew",
+      "price": 2300,
+      "comment": "New Phone",
+      "date": "2022-02-05T18:30:00.000Z",
+      "id": 4
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
