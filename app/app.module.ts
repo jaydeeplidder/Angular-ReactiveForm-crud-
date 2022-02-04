@@ -20,11 +20,17 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
+import { AdminComponent } from './admin/admin.component';
+import { UserComponent } from './user/user.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DialogComponent
+    DialogComponent,
+    AdminComponent,
+    UserComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

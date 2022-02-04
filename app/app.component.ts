@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewChild } from '@angular/core';
+import { Component, OnInit,ViewChild,ViewContainerRef,ComponentFactoryResolver } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
 import { ApiService } from './services/api.service';
@@ -18,7 +18,8 @@ export class AppComponent implements OnInit{
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private dialog:MatDialog ,private api:ApiService){}
+
+  constructor(private dialog:MatDialog ,private api:ApiService,private viewConatainer:ViewContainerRef,private componentReference:ComponentFactoryResolver){}
 
   ngOnInit(): void {
       this.getAllProducts();
@@ -77,5 +78,28 @@ export class AppComponent implements OnInit{
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  async loadAdmin(){
+    this.viewConatainer.clear;
+    const{ AdminComponent } =await import("./admin/admin.component");
+    this.viewConatainer.createComponent(
+      this.componentReference.resolveComponentFactory(AdminComponent)
+    )
+  }
+
+  async loadUser(){
+    this.viewConatainer.clear;
+    const{ UserComponent } =await import("./user/user.component");
+    this.viewConatainer.createComponent(
+      this.componentReference.resolveComponentFactory(UserComponent)
+    )
+  }
+  async loadLogin(){
+    this.viewConatainer.clear;
+    const{ LoginComponent } =await import("./login/login.component");
+    this.viewConatainer.createComponent(
+      this.componentReference.resolveComponentFactory(LoginComponent)
+    )
   }
 }
